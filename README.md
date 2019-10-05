@@ -5,7 +5,7 @@ D:\first-branch-master>npm install    fazendo assim o download das dependecias d
 
 após instalar as dependencias,
 
-D:\first-branch-master>npm start rodando o projeto localmente
+D:\first-branch-master>npm start     -- rodando o projeto localmente
 
 para testar a funcionalidade da api use o postman ou curl caso esteja utilizando linux mac
 e faça uma requisição get na seguinte url: localhost:5000/consulta?cpf= e insira algum valor no cpf.
