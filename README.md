@@ -16,9 +16,7 @@ a api esta escutando esta url neste pedaço de codigo que se encontra em app.js
 Codigo importante para o funcionamento da api
 
 const { cadesp } = require('./webscrap/cadesp/cadesp')
-.
-.
-.
+
 app.get('/consulta', async (req, res) =>{
   //esperando o parametro cpf
   const { cpf } = req.query  
