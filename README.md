@@ -18,11 +18,11 @@ Codigo importante para o funcionamento da api
 const { cadesp } = require('./webscrap/cadesp/cadesp')
 
 app.get('/consulta', async (req, res) =>{
-  //esperando o parametro cpf
+  /
   const { cpf } = req.query  
-  //chamando o script de automação e passando o parametro cpf
+
   const resultadoCADESP = await cadesp(cpf)
   
-  res.status(200).json(resultadoCADESP)  //Usuario que faz requisição NÃO VE a propriedade
+  res.status(200).json(resultadoCADESP) 
 }
 
