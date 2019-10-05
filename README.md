@@ -15,7 +15,7 @@ a api esta escutando esta url neste pedaço de codigo que se encontra em app.js
 
 Codigo importante para o funcionamento da api
 
-const { cadesp } = require('./webscrap/cadesp/cadesp')== exports.cadesp... da forma como eu pensei, de ter um arquivo.js para cada site, seria mais intuitivo usar module.export ,
+const { cadesp } = require('./webscrap/cadesp/cadesp')
 .
 .
 .
