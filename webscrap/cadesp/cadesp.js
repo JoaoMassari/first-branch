@@ -440,7 +440,7 @@ return [ConsultarAutorizado, ConsultarEmpresa, ConsultarTrabalhador];
 
 };
 
-exports.censec = async () => {
+exports.censec = async (cpf,) => {
   const browser = await puppeteer.launch({defaultViewport: {width: 1920, height: 1080}});
   const page = await browser.newPage();
   await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/censec/login.html'); 
@@ -456,7 +456,7 @@ exports.censec = async () => {
   await page.screenshot({path: 'censec4.png'}); 
 
   const clickDocumentoCPF = await page.click('#aspnetForm > div.Geral > div > div.Conteudo > div.InternaAbas > div.AreaFormulario > fieldset > div:nth-child(2) > div');
-  await page.keyboard.type('3122') //front 
+  await page.keyboard.type(cpf) //front 
   await page.screenshot({path: 'censec5.png'}); 
 
   const clickBuscar = await page.click('#ctl00_ContentPlaceHolder1_BuscarButton');    

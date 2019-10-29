@@ -72,9 +72,9 @@ app.get('/consultaCaged', async (req, res) => {
 
 app.get('/consultaCensec', async (req, res) => {
     //localhost:3000/test?batata=texto
-    const {  } = req.query;
+    const { cpf } = req.query;
     
-    const resultadoCensec = await censec();
+    const resultadoCensec = await censec(cpf);
 
     res.status(200).json(resultadoCensec)      
 
