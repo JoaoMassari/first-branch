@@ -1,4 +1,5 @@
 require('dotenv/config');
+require('events').EventEmitter.defaultMaxListeners = 0
 const express = require('express');
 const mongoose = require('mongoose')
 var port = process.env.PORT || 5000;
