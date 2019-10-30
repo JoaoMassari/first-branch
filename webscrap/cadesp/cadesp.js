@@ -24,7 +24,7 @@ exports.cadesp = async (cpf) => {
 
   const clickEntrar = await page.click('#ctl00_conteudoPaginaPlaceHolder_loginControl_loginButton');
 
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/cadesp/pagina3-pesquisa.html');
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/cadesp/pagina3-pesquisa.html',{waitUntil: 'domcontentloaded'});
   await page.screenshot({path: 'CadastroDedo.png'}); 
 
   const inserirCPF = await page.click('#ctl00_conteudoPaginaPlaceHolder_tcConsultaCompleta_TabPanel1_txtIdentificacao');
