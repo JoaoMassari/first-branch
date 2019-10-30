@@ -1,7 +1,7 @@
 require('dotenv/config');
 const express = require('express');
 const mongoose = require('mongoose')
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 5000;
 const app = express(); //executing express...now we can create routes with express
 //transforming the data received in the models in json
 const bodyParser = require('body-parser')

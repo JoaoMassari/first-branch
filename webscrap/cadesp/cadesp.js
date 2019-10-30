@@ -12,7 +12,7 @@ const numProcesso = '889532'
 exports.cadesp = async (cpf) => {
   const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   const page = await browser.newPage();
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/cadesp/login.html');
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/cadesp/login.html',{waitUntil: 'domcontentloaded'});
 
   // LOGAR
   const clickLogin = await page.click('#ctl00_conteudoPaginaPlaceHolder_loginControl_UserName');
