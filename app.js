@@ -90,4 +90,7 @@ mongoose.connect(
  () => console.log('connect to db'))
 
 //Lets listen to the server
-app.listen(5000);
+/* app.listen(5000); */
+server.listen(config.port, function () {
+    console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
+  });
