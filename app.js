@@ -10,10 +10,31 @@ const { cadesp, sivec, siel, arpenp, caged, censec} = require('./webscrap/cadesp
 //make sure everytime we hit any request,his bodyparser runs
 app.use(bodyParser.json())
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "localhost:3000"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+    var oneof = false;
+    if(req.headers.origin) {
+        res.header('Access-Control-Allow-Origin', req.headers.origin);
+        oneof = true;
+    }
+    if(req.headers['access-control-request-method']) {
+        res.header('Access-Control-Allow-Methods', req.headers['access-control-request-method']);
+        oneof = true;
+    }
+    if(req.headers['access-control-request-headers']) {
+        res.header('Access-Control-Allow-Headers', req.headers['access-control-request-headers']);
+        oneof = true;
+    }
+    if(oneof) {
+        res.header('Access-Control-Max-Age', 60 * 60 * 24 * 365);
+    }
+
+    // intercept OPTIONS method
+    if (oneof && req.method == 'OPTIONS') {
+        res.send(200);
+    }
+    else {
+        next();
+    }
+});
 //Import routes
 const postsRoute = require('./routes/posts');
 
