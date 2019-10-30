@@ -66,7 +66,7 @@ await page.screenshot({path: 'VerificarConsultar.png'});
       postoFiscal, 
     } 
  }); 
-
+  await page.close();
   await browser.close();
   return Consultar
 };
