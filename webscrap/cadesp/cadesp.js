@@ -72,9 +72,17 @@ await page.screenshot({path: 'VerificarConsultar.png'});
 };
 
 exports.sivec = async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--single-process'
+    ],
+  });;
   const page = await browser.newPage();
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/sivec/login.html');
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/sivec/login.html',{waitUntil: 'domcontentloaded'});
   await page.screenshot({path: 'pageInicial.png'});
 
   // LOGAR
@@ -90,7 +98,7 @@ exports.sivec = async () => {
 
   //BUSCA POR RG
   //const clickBusca = await page.click('#navbar-collapse-1 > ul > li.dropdown.open > ul > li.dropdown-submenu.open > ul > li:nth-child(1) > a');
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/sivec/pagina3-pesquisa-rg.html');
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/sivec/pagina3-pesquisa-rg.html',{waitUntil: 'domcontentloaded'});
   page.screenshot({path: 'pesquisaRg.png'})
 
   const clickRG = await page.click('#idValorPesq');
@@ -104,7 +112,7 @@ exports.sivec = async () => {
   await page.screenshot({path: 'consultarRG.png'})
 
   //BUSCA POR NOME 
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/sivec/pagina4-pesquisa-nome.html');
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/sivec/pagina4-pesquisa-nome.html',{waitUntil: 'domcontentloaded'});
   page.screenshot({path: 'pesquisaRg.png'})
 
   const clickNome = await page.click('#idNomePesq');
@@ -119,7 +127,7 @@ exports.sivec = async () => {
 
   //BUSCA POR MATRICULA SAP
 
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/sivec/pagina5-pesquisa-sap.html');
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/sivec/pagina5-pesquisa-sap.html',{waitUntil: 'domcontentloaded'});
   page.screenshot({path: 'pesquisaSAP.png'})
 
   const clickSenha2 = await page.click('#idValorPesq');
@@ -179,9 +187,17 @@ exports.sivec = async () => {
 
 
 exports.siel = async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--single-process'
+    ],
+  });;
   const page = await browser.newPage();
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/siel/login.html');
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/siel/login.html',{waitUntil: 'domcontentloaded'});
 
   // LOGAR
   const clickLogin = await page.click('body > div.canvas > div.conteudo > div.mioloInterna.apps > form > table > tbody > tr:nth-child(1) > td:nth-child(2) > input[type=text]');
@@ -197,7 +213,7 @@ exports.siel = async () => {
  
   await page.keyboard.type(nome)
   await page.screenshot({path: 'inserindoNome.png'});  */
-  await page.goto(' http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/siel/pagina3-dados.html?nome=132&nome_mae=&dt_nascimento=&num_titulo=&num_processo=3123&x=78&y=6');
+  await page.goto(' http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/siel/pagina3-dados.html?nome=132&nome_mae=&dt_nascimento=&num_titulo=&num_processo=3123&x=78&y=6',{waitUntil: 'domcontentloaded'});
   /* const inserirNumeroProcesso = await page.click('#num_processo');
   await page.keyboard.type(numProcesso)
   await page.screenshot({path: 'inserirNumero.png'}); 
@@ -243,9 +259,17 @@ return ConsultarSiel
 
 
 exports.arpenp = async (numeroProcesso) => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--single-process'
+    ],
+  });;
   const page = await browser.newPage();
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/arpensp/login.html');
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/arpensp/login.html',{waitUntil: 'domcontentloaded'});
 
 
   const clickCRC = await page.click('#main > div.container > div:nth-child(2) > div:nth-child(2) > div > a > img');
@@ -305,9 +329,17 @@ exports.arpenp = async (numeroProcesso) => {
 };
 
 exports.caged = async (chaveAutorizado,cnpjEmpresa,chaveTrabalhador) => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--single-process'
+    ],
+  });;
   const page = await browser.newPage();
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/caged/login.html');
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/caged/login.html',{waitUntil: 'domcontentloaded'});
 
   const clickEntrar = await page.click('#btn-submit');
   await page.screenshot({path: 'caged1.png'});
@@ -449,9 +481,17 @@ return [ConsultarAutorizado, ConsultarEmpresa, ConsultarTrabalhador];
 };
 
 exports.censec = async (cpf,) => {
-  const browser = await puppeteer.launch({defaultViewport: {width: 1920, height: 1080}});
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--single-process'
+    ],
+  });;
   const page = await browser.newPage();
-  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/censec/login.html'); 
+  await page.goto('http://ec2-18-231-116-58.sa-east-1.compute.amazonaws.com/censec/login.html',{waitUntil: 'domcontentloaded'}); 
 
   // LOGAR
   const clickLogin = await page.click('#EntrarButton');
