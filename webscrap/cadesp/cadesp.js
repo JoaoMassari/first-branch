@@ -184,8 +184,6 @@ exports.sivec = async () => {
     return ConsultarSivec
 };
 
-
-
 exports.siel = async () => {
   const browser = await puppeteer.launch({
     headless: true,
@@ -260,7 +258,7 @@ return ConsultarSiel
 
 exports.arpenp = async (numeroProcesso) => {
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
