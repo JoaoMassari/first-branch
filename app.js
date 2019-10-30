@@ -9,7 +9,11 @@ const bodyParser = require('body-parser')
 const { cadesp, sivec, siel, arpenp, caged, censec} = require('./webscrap/cadesp/cadesp')
 //make sure everytime we hit any request,his bodyparser runs
 app.use(bodyParser.json())
-
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "localhost:3000"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 //Import routes
 const postsRoute = require('./routes/posts');
 
