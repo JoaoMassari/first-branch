@@ -1,6 +1,7 @@
 require('dotenv/config');
 const express = require('express');
 const mongoose = require('mongoose')
+var port = process.env.PORT || 8080;
 const app = express(); //executing express...now we can create routes with express
 //transforming the data received in the models in json
 const bodyParser = require('body-parser')
@@ -91,6 +92,4 @@ mongoose.connect(
 
 //Lets listen to the server
 /* app.listen(5000); */
-app.listen(config.port, function () {
-    console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
-  });
+app.listen(port);
